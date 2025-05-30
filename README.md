@@ -54,7 +54,7 @@ Reconciliation is the algorithm behind what is popularly understood as the "virt
 Although Fiber is a ground-up rewrite of the reconciler, the high-level algorithm [described in the React docs](https://facebook.github.io/react/docs/reconciliation.html) will be largely the same. The key points are:
 
 - Different component types are assumed to generate substantially different trees. React will not attempt to diff them, but rather replace the old tree completely.
-- Diffing of lists is performed using keys. Keys should be "stable, predictable, and unique."
+- Diffing of lists is performed using keys. Keys should be "stable, predictable, and unique."  <-- <h4>Important</h4>
 
 ### Reconciliation versus rendering
 
@@ -86,6 +86,7 @@ React's [Design Principles](https://facebook.github.io/react/contributing/design
 >
 > If something is offscreen, we can delay any logic related to it. If data is arriving faster than the frame rate, we can coalesce and batch updates. We can prioritize work coming from user interactions (such as an animation caused by a button click) over less important background work (such as rendering new content just loaded from the network) to avoid dropping frames.
 
+<h2>Important</h2>
 The key points are:
 
 - In a UI, it's not necessary for every update to be applied immediately; in fact, doing so can be wasteful, causing frames to drop and degrading the user experience.
